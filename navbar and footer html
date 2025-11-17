@@ -18,3 +18,8 @@
                 </li>
             </ul>
         </nav>
+
+<div class="footer">
+            <footer><a href="contact_form.html">Contact form</a> | <a href="credits.html">Credits</a> | <a
+                    href="">Mistakes</a></footer>
+        </div>
