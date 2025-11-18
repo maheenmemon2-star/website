@@ -1,6 +1,180 @@
-//* Everyone write your CSS code here*// 
-/*MENU/NAVBAR FOR ALL MAIN PAGES*/
-* navbar */
+body {
+  font-family: sans-serif;
+  color: #111111;
+  font-size: 90%;
+  width: 100%;
+  margin: 0;
+}
+
+/*for mobile screen sizes*/
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_responsive*/
+
+@media (max-width: 600px) {
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "menu"
+      "section-heading"
+      "other"
+      "footer";
+    background-color: white;
+    gap: 10px;
+  }
+
+  /*https://www.w3schools.com/css/css_navbar_horizontal.asp*/
+  /*changes to a horizontal navbar instead of vertical when screen size is as a phone*/
+  .menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .menu ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  header img {
+    height: 60vh;
+  }
+
+  header>h1 {
+    font-size: 32px;
+    top: 30%;
+    /* smaller but still bold + readable */
+    right: 10px;
+    /* move it closer to the edge */
+  }
+
+  header>p {
+    font-size: 18px;
+    top: 50%;
+    right: 5%;
+  }
+
+  iframe {
+    width: 80%;
+    height: 250px;
+  }
+
+}
+
+/*For tablet screen sizes*/
+@media (min-width: 600px) and (max-width: 900px) {
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "menu header"
+      "menu section-heading"
+      "menu other"
+      "footer footer";
+    grid-template-columns: 180px auto;
+  }
+
+  .menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  header img {
+    height: 80vh;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}
+
+/*For Laptop screen sizes*/
+
+@media(min-width: 900px) {
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-areas:
+      "menu header"
+      "menu section-heading"
+      "menu other"
+      "footer footer";
+  }
+
+  .menu {
+    width: 250px;
+    position: fixed;
+  }
+
+  iframe {
+    width: 600px;
+  }
+
+}
+
+
+/* navbar */
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_gray*/
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar*/
+.header {
+  grid-area: header;
+  text-align: center;
+  color: white;
+}
+
+/*https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_background1*/
+header img {
+  width: 100%;
+  height: 90vh;
+  background-position: center center;
+  background-size: cover;
+  display: block;
+   animation: zoomin 12s ease-in-out infinite alternate;
+  -webkit-animation: zoomin 12s ease-in-out infinite alternate;
+}
+
+
+header>h1 {
+  font-size: 50px;
+  text-align: right;
+  position: absolute;
+  z-index: 10;
+  top: 30%;
+  right: 60px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display:inline-block;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 700;
+}
+
+header>p {
+  font-size: 30px;
+  text-align: right;
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  right: 60px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 200;
+}
+
+/* navbar */
 /*https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_gray*/
 /*https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar*/
 .menu {
@@ -80,8 +254,61 @@ li.dropdown {
   background-color: #000000d7;
 }
 
-/*-----------------------FOOTER-------------------------------------------*/
-footer {
+
+
+.content {
+  grid-area: section-heading;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.content h1 {
+  margin-top: 0px;
+  font-size: 32px;
+  color: #232323;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.content p {
+  display: inline-block;
+  text-align: left;
+  font-size: 15px;
+  line-height: 26px;
+  color: #343434;
+  top: 12.5px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.text-content {
+  padding-top: 20px;
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+.text-content h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #232323;
+  letter-spacing: 0.5px;
+}
+
+iframe {
+  grid-area: section-heading;
+  padding-top: 20px;
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
   grid-area: footer;
   background-color: rgba(12, 12, 12, 0.9);
   height: 80px;
