@@ -1,9 +1,9 @@
 body {
-  font-family: sans-serif;
-  color: #111111;
-  font-size: 90%;
-  width: 100%;
-  margin: 0;
+  font-family: sans-serif; /* sets font family */
+  color: #111111; /* sets text color */
+  font-size: 90%; /* sets font size */
+  width: 100%; /* sets width */
+  margin: 0; /* sets margin */
 }
 
 /*for mobile screen sizes*/
@@ -13,45 +13,42 @@ body {
 
   .grid-containerE {
     display: grid;
-    grid-template-areas:
+    grid-template-areas: /* defines grid template areas */
       "headerE"
       "menu"
       "content"
-      "other"
       "footer";
-    background-color: white;
+    background-color: white; /* sets text color */
     gap: 10px;
   }
 
   /*https://www.w3schools.com/css/css_navbar_horizontal.asp*/
   /*changes to a horizontal navbar instead of vertical when screen size is as a phone*/
   .menu {
-    position: relative;
-    width: 100%;
-    height: auto;
+    position: relative; /* sets positioning method */
+    width: 100%; /* sets width */
+    height: auto; /* sets height */
   }
 
   .menu ul {
-    display: flex;
+    display: flex; /* sets display type */
     justify-content: center;
   }
 
   .headerE img {
-    height: 60vh;
+    height: 60vh !important; /* sets image height */
   }
 
   .headerE h1 {
-    font-size: 32px;
-    top: 30%;
-    /* smaller but still bold + readable */
+    font-size: 24px;
+    top: 20%;
     right: 10px;
-    /* move it closer to the edge */
   }
 
   .headerE p {
-    font-size: 18px;
-    top: 50%;
-    right: 5%;
+    font-size: 14px;
+    top: 35%;
+    right: 10%;
   }
 
   iframe {
@@ -99,7 +96,7 @@ body {
     grid-template-areas:
       "menu headerE"
       "menu content"
-      "menu other"
+      "menu contact"
       "footer footer";
   }
 
@@ -110,6 +107,14 @@ body {
 
   iframe {
     width: 600px;
+  }
+
+  .contact {
+    grid-area: contact;
+    text-align: center;
+    position: relative;
+    margin-bottom: 60px;
+    display: block;
   }
 
 }
@@ -131,7 +136,7 @@ body {
   background-position: center center;
   background-size: cover;
   display: block;
-   animation: zoomin 12s ease-in-out infinite alternate;
+  animation: zoomin 12s ease-in-out infinite alternate;
   -webkit-animation: zoomin 12s ease-in-out infinite alternate;
 }
 
@@ -148,7 +153,7 @@ body {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  display:inline-block;
+  display: inline-block;
   margin-top: 0px;
   margin-bottom: 15px;
   color: #fff;
@@ -160,6 +165,7 @@ body {
   text-align: right;
   position: absolute;
   z-index: 10;
+  margin-top: 60px;
   top: 40%;
   right: 60px;
   -webkit-transform: translateY(-50%);
@@ -168,7 +174,6 @@ body {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   display: inline-block;
-  margin-top: 0px;
   margin-bottom: 15px;
   color: #fff;
   font-weight: 200;
@@ -195,6 +200,7 @@ body {
 .menu li {
   padding: 10px 0;
   text-align: center;
+  list-style-type: none;
 }
 
 .menu li a {
@@ -206,6 +212,7 @@ body {
   margin-top: 5px;
   font-size: 15px;
   letter-spacing: 0.5px;
+  list-style-type: none;
 }
 
 .menu li a,
@@ -333,4 +340,79 @@ iframe {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive*/
+* {
+  box-sizing: border-box;
+}
+
+.responsive-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: 2px solid #0000007e;;
+  background-color:  #f2f2f2;
+  padding: 20px;
+  margin-top: 10%;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  min-width: 48%;
+  margin-bottom: 10px;
+}
+
+input[type=text], select {
+  min-width: 45%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+textarea {
+  min-width: 45%;
+  height: 150px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #000000d0;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  label,
+  input[type=text],
+  input[type=submit],
+  select, textarea {
+    flex: 100%;
+    min-width: 100%;
+  }
+}
+
+.memorable{
+  text-align: left;
+  list-style: none;
+}
+
+.memorable li{
+  margin-top: 4%;
 }
