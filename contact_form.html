@@ -13,13 +13,43 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Europe</a></li>
-                <li><a href="">England</a></li>
-                <li><a href="">Romania</a></li>
-                <li><a href="">Poland</a></li>
-                <li><a href="">France</a></li>
 
-                <!--https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar-->
-                <li class="dropdown"><a href="belgium.html" class="dropbtn">Belgium</a>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">England</a>
+                    <div class="dropdown-content">
+                        <a href="">Places in England</a>
+                        <a href="">Culture and Lifestyle</a>
+                        <a href="">Personal experience</a>
+                        <a href="">Advice for future travellers</a>
+                    </div>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Romania</a>
+                    <div class="dropdown-content">
+                        <a href="places.html">Places in Romania</a>
+                        <a href="culture.html">Culture and Lifestyle</a>
+                        <a href="experience.html">Personal experience</a>
+                        <a href="advice.html">Advice for future travellers</a>
+                    </div>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Poland</a>
+                    <div class="dropdown-content">
+                        <a href="">Places in Poland</a>
+                        <a href="">Culture and Lifestyle</a>
+                        <a href="">Personal experience</a>
+                        <a href="">Advice for future travellers</a>
+                    </div>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">France</a>
+                    <div class="dropdown-content">
+                        <a href="">Places in France</a>
+                        <a href="">Culture and Lifestyle</a>
+                        <a href="">Personal experience</a>
+                        <a href="">Advice for future travellers</a>
+                    </div>
+
+                    <!--https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar-->
+                <li class="dropdown">
+                    <a href="belgium.html" class="dropbtn">Belgium</a>
                     <div class="dropdown-content">
                         <a href="places_in_belgium.html">Places in Belgium</a>
                         <a href="culture_and_lifestyle_B.html">Culture and Lifestyle</a>
@@ -46,11 +76,17 @@
                     <label for="lname">Last Name:</label>
                     <input type="text" id="lname" name="lname" placeholder="Your last name">
 
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Your email address">
+
                     <label for="country">Country:</label>
                     <select id="country" name="country">
-                        <option value="belgium">belgium</option>
-                        <option value="poland">poland</option>
-                        <option value="romania">romania</option>
+                        <option value="belgium">None</option>
+                        <option value="belgium">Belgium</option>
+                        <option value="poland">Poland</option>
+                        <option value="romania">Romania</option>
+                        <option value="england">England</option>
+                        <option value="france">France</option>
                     </select>
 
                     <label for="message">Message:</label>
@@ -58,10 +94,15 @@
 
                     <input type="submit" value="Submit">
                 </form>
+            </div>
         </main>
 
-        <footer class="footer"><a href="contact_form.html">Contact form</a> | <a href="credits.html">Credits</a> | <a
-                href="mistakes.html">Mistakes</a></footer>
+        <div class="footer">
+            <footer>Copyright © 2025 Europe website | <a href="contact_form.html">Contact form</a> | <a href="credits.html">Contributions</a> | <a
+                    href="mistakes.html">Mistakes</a></footer>
+        </div>
+        </div>
+    </div>
 
 </body>
 
