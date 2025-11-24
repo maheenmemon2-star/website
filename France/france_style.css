@@ -1,0 +1,807 @@
+/* Reset default margins and padding, use border-box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global body styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+  color: #2c2c2c; /* Dark gray text color */
+  font-size: 90%; /* Base font size */
+  width: 100%; /* Full width */
+  background-color: #F9F6F0; /* Warm cream background color */
+}
+
+/* Navigation menu base styles for both vertical and horizontal layouts */
+.menu,
+.menu2 {
+  background-color: #3D5A7F; /* Sophisticated French blue background */
+  overflow: visible; /* Ensure dropdown content is visible */
+}
+
+/* Vertical sidebar menu for grid-container (france.html) */
+.grid-container .menu {
+  grid-area: menu; /* Assign to menu grid area */
+  width: 250px; /* Fixed width sidebar */
+  position: fixed; /* Keep fixed while scrolling */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: visible; /* Ensure dropdowns aren't clipped */
+}
+
+/* Horizontal menu for grid-container2 (other France pages) */
+.grid-container2 .menu,
+.grid-container2 .menu2,
+.menu2 {
+  grid-area: menu2; /* Assign to menu2 grid area */
+  width: 100%; /* Full width */
+  height: auto; /* Auto height for horizontal layout */
+}
+
+/* Menu list styles */
+.menu ul,
+.menu2 ul {
+  list-style-type: none; /* Remove default bullet points */
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove padding */
+  width: 100%; /* Full width */
+}
+
+/* Vertical list layout for sidebar menu */
+.grid-container .menu ul {
+  display: block; /* Stack items vertically */
+}
+
+/* Horizontal centered list layout for top menu */
+.grid-container2 .menu ul,
+.menu2 ul {
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center items horizontally */
+}
+
+/* Menu item positioning for dropdowns */
+.menu li,
+.menu2 li {
+  position: relative; /* Allow absolute positioning of dropdowns */
+}
+
+/* Vertical menu items for sidebar */
+.grid-container .menu li {
+  display: block; /* Stack vertically */
+}
+
+/* Horizontal menu items for top menu */
+.grid-container2 .menu li,
+.menu2 li {
+  display: inline-block; /* Align horizontally */
+}
+
+/* Menu links and dropdown buttons base styles */
+.menu li a,
+.menu2 li a,
+.dropbtn {
+  display: block; /* Make links behave as blocks */
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Sidebar menu link styles */
+.grid-container .menu li a,
+.grid-container .dropbtn {
+  text-align: left; /* Left-align sidebar items */
+  padding: 15px 20px; /* Padding for sidebar items */
+}
+
+/* Top menu link styles */
+.grid-container2 .menu li a,
+.grid-container2 .dropbtn,
+.menu2 li a,
+.menu2 .dropbtn {
+  text-align: center; /* Center-align top menu items */
+  padding: 25px 20px; /* Larger padding for top menu */
+}
+
+/* Hover effect for menu links */
+.menu li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #8B3A3A; /* Burgundy background on hover */
+  color: white; /* White text on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Dropdown menu items */
+.menu li.dropdown,
+.menu2 li.dropdown {
+  position: relative; /* For absolute positioning of dropdown content */
+}
+
+/* Sidebar dropdown items */
+.grid-container .menu li.dropdown {
+  display: block; /* Stack vertically */
+}
+
+/* Top menu dropdown items */
+.grid-container2 .menu li.dropdown,
+.menu2 li.dropdown {
+  display: inline-block; /* Align horizontally */
+}
+
+/* Dropdown content base styles (hidden by default) */
+.dropdown-content {
+  display: none; /* Hidden until hover */
+  position: absolute; /* Position relative to parent */
+  background-color: #2C4A6E; /* Darker sophisticated French blue background */
+  min-width: 160px; /* Minimum width */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 9999; /* Ensure it appears above other elements */
+  top: 0; /* Default positioning for sidebar */
+  left: 100%; /* Position to the right of sidebar items */
+}
+
+/* Dropdown positioning for horizontal top menu */
+.grid-container2 .dropdown-content,
+.menu2 .dropdown-content {
+  top: 100%; /* Position below the button */
+  left: 0; /* Align left with parent */
+}
+
+/* Dropdown link styles */
+.dropdown-content a {
+  color: white; /* White text */
+  padding: 12px 16px; /* Padding for each link */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Stack vertically */
+  text-align: left; /* Left-align text */
+  position: relative; /* Allow transitions */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+  background-color: #8B3A3A; /* Burgundy background on hover */
+  color: white; /* White text on hover */
+  padding-left: 20px; /* Slight indent on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block !important; /* Force display on hover */
+}
+
+/* Ensure dropdown visibility for sidebar */
+.grid-container .menu .dropdown:hover .dropdown-content {
+  display: block !important; /* Force display */
+  visibility: visible; /* Ensure visibility */
+}
+
+/* Header styles for France content pages */
+.france-header {
+  background: linear-gradient(135deg, #3D5A7F 0%, #5B7FA6 50%, #2C4A6E 100%); /* French blue gradient background */
+  color: white; /* White text */
+  padding: 60px 20px; /* Vertical and horizontal padding */
+  text-align: center; /* Center text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Header main title */
+.france-header h1 {
+  font-size: 48px; /* Large heading size */
+  font-weight: 700; /* Bold weight */
+  margin-bottom: 10px; /* Space below title */
+  letter-spacing: 1px; /* Increased letter spacing */
+}
+
+/* Header subtitle paragraph */
+.france-header p {
+  font-size: 20px; /* Subtitle size */
+  font-weight: 300; /* Light weight */
+  margin: 0; /* No margin */
+  opacity: 0.95; /* Slightly transparent */
+}
+
+/* Red accent line under header */
+.france-header .accent-line {
+  width: 60px; /* Fixed width */
+  height: 4px; /* Thin line */
+  background-color: #8B3A3A; /* French red color */
+  margin: 15px auto 0; /* Center horizontally with space above */
+  border-radius: 2px; /* Slightly rounded corners */
+}
+
+/* Main content wrapper */
+.content-wrapper {
+  max-width: 1200px; /* Maximum width constraint */
+  margin: 40px auto; /* Center with vertical margin */
+  padding: 0 20px; /* Horizontal padding */
+}
+
+/* Section title styles */
+.section-title {
+  font-size: 32px; /* Large title size */
+  font-weight: 600; /* Semi-bold */
+  color: #3D5A7F; /* French blue color */
+  margin-bottom: 30px; /* Space below */
+  padding-bottom: 15px; /* Space for underline */
+  border-bottom: 3px solid #8B3A3A; /* French red underline */
+  display: inline-block; /* Only underline the text width */
+}
+
+/* Content card container */
+.content-card {
+  background: white; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 30px; /* Inner spacing */
+  margin-bottom: 30px; /* Space between cards */
+}
+
+/* Content card heading */
+.content-card h3 {
+  font-size: 24px; /* Heading size */
+  color: #3D5A7F; /* French blue color */
+  margin-bottom: 20px; /* Space below heading */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Content card paragraph */
+.content-card p {
+  font-size: 16px; /* Standard text size */
+  line-height: 1.8; /* Increased line spacing for readability */
+  color: #333; /* Dark gray text */
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Table styles within content cards */
+.content-card table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse borders */
+  margin: 20px 0; /* Vertical margin */
+}
+
+/* Table header cells */
+.content-card table th {
+  background-color: #3D5A7F; /* French blue background */
+  color: white; /* White text */
+  padding: 12px; /* Cell padding */
+  text-align: left; /* Left-align content */
+  font-weight: 600; /* Bold text */
+}
+
+/* Table data cells */
+.content-card table td {
+  padding: 12px; /* Cell padding */
+  border-bottom: 1px solid #e0e0e0; /* Light border */
+}
+
+/* Highlight table rows on hover */
+.content-card table tbody tr:hover {
+  background-color: #f5f5f5; /* Very light gray background */
+}
+
+/* Bold text styling in tables */
+.content-card table strong {
+  color: #1f1b4d; /* Dark purple color */
+}
+
+/* Unordered lists in content cards */
+.content-card ul {
+  margin: 20px 0 20px 20px; /* Indent list from left */
+  line-height: 2; /* Extra line spacing */
+}
+
+/* List item styling */
+.content-card ul li {
+  color: #333; /* Dark gray text */
+  margin-bottom: 10px; /* Space between items */
+}
+
+/* Custom bullet point styling (checkmark) */
+.content-card ul li:before {
+  content: "✓ "; /* French red checkmark symbol */
+  color: #8B3A3A; /* French red color */
+  font-weight: bold; /* Bold checkmark */
+  margin-right: 10px; /* Space after checkmark */
+}
+
+/* Source link container */
+.source-link {
+  display: block; /* Full width */
+  margin-top: 15px; /* Space above */
+  padding-top: 15px; /* Space inside */
+  border-top: 1px solid #e0e0e0; /* Separator line */
+  font-size: 14px; /* Smaller text size */
+  color: #666; /* Medium gray text */
+}
+
+/* Source link styling */
+.source-link a {
+  color: #3D5A7F; /* French blue color */
+  text-decoration: none; /* No underline */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Source link hover effect */
+.source-link a:hover {
+  color: #8B3A3A; /* Change to French red on hover */
+}
+
+/* Footer container */
+.footer {
+  background-color: #3D5A7F; /* French blue background */
+  color: white; /* White text */
+  text-align: center; /* Center text */
+  padding: 30px; /* Inner padding */
+  margin-top: 60px; /* Space above */
+  border-top: 1px solid rgba(255, 255, 255, 0.12); /* Subtle top border */
+}
+
+/* Footer links */
+.footer a {
+  color: #8B3A3A; /* French red color */
+  text-decoration: none; /* No underline */
+  font-weight: 600; /* Semi-bold */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Footer link hover effect */
+.footer a:hover {
+  color: white; /* Change to white on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Footer text styling */
+.footer {
+  font-size: 14px; /* Smaller text size */
+  line-height: 1.8; /* Increased line spacing */
+}
+
+/* Grid layout for france.html with sidebar menu */
+.grid-container {
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: 250px 1fr; /* Sidebar (250px) + Content (remaining) */
+  grid-template-areas:
+    "menu header" /* Menu on left, header on right */
+    "menu section-heading" /* Menu on left, content on right */
+    "menu facts" /* Menu on left, facts on right */
+    "footer footer"; /* Full-width footer */
+  margin-left: 0; /* No left margin */
+}
+
+/* Body margin for sidebar layout */
+.grid-container body {
+  margin-left: 250px; /* Account for fixed sidebar */
+}
+
+/* Grid layout for other France pages with top menu */
+.grid-container2 {
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: 1fr; /* Full width single column */
+  grid-template-areas:
+    "menu2" /* Top menu */
+    "header" /* Header section */
+    "section-heading" /* Main content */
+    "facts" /* Facts section */
+    "footer"; /* Footer */
+}
+
+/* Grid area assignments for grid-container2 */
+.grid-container2 .menu2 {
+  grid-area: menu2; /* Place in menu2 area */
+}
+
+.grid-container2 .header {
+  grid-area: header; /* Place in header area */
+}
+
+.grid-container2 .section-heading {
+  grid-area: section-heading; /* Place in section-heading area */
+}
+
+.grid-container2 .facts {
+  grid-area: facts; /* Place in facts area */
+}
+
+.grid-container2 .footer {
+  grid-area: footer; /* Place in footer area */
+}
+
+/* Main header section styling */
+.header {
+  grid-area: header; /* Assign to grid area */
+  text-align: center; /* Center content */
+  color: white; /* White text */
+  position: relative; /* For absolute positioning of text */
+}
+
+/* Header image styling */
+.header img {
+  width: 100%; /* Full width */
+  height: 110vh; /* Large height (110% of viewport) */
+  background-position: center center; /* Center image */
+  background-size: cover; /* Cover entire area */
+  display: block; /* Remove inline spacing */
+  animation: zoomin 12s ease-in-out infinite alternate; /* Zoom animation */
+  -webkit-animation: zoomin 12s ease-in-out infinite alternate; /* Webkit version */
+}
+
+/* Zoom in/out animation */
+@keyframes zoomin {
+  from {
+    transform: scale(1); /* Normal size */
+  }
+  to {
+    transform: scale(1.1); /* Slightly zoomed in */
+  }
+}
+
+/* Header main title positioning */
+.header > h1 {
+  font-size: 70px; /* Very large title */
+  text-align: right; /* Right-aligned */
+  position: absolute; /* Float above image */
+  z-index: 10; /* Appear above image */
+  top: 30%; /* Position 30% from top */
+  right: 60px; /* 60px from right edge */
+  transform: translateY(-50%); /* Vertically center */
+  display: inline-block; /* Inline display */
+  margin-top: 0px; /* No top margin */
+  margin-bottom: 15px; /* Bottom margin */
+  color: #fff; /* White color */
+  font-weight: 700; /* Bold weight */
+}
+
+/* Header subtitle positioning */
+.header > p {
+  font-size: 40px; /* Large subtitle */
+  text-align: right; /* Right-aligned */
+  position: absolute; /* Float above image */
+  z-index: 10; /* Appear above image */
+  top: 40%; /* Position 40% from top */
+  right: 60px; /* 60px from right edge */
+  transform: translateY(-50%); /* Vertically center */
+  display: inline-block; /* Inline display */
+  margin-top: 0px; /* No top margin */
+  margin-bottom: 15px; /* Bottom margin */
+  color: #fff; /* White color */
+  font-weight: 200; /* Light weight */
+}
+
+/* Quick Facts section styling */
+.facts {
+  grid-area: facts; /* Assign to facts grid area */
+  border: 2px solid #8B3A3A; /* French red border */
+  border-radius: 12px; /* Rounded corners */
+  background: linear-gradient(135deg, #3D5A7F 0%, #5B7FA6 100%); /* French blue gradient background */
+  padding: 30px; /* Inner spacing */
+  color: white; /* White text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
+  transition: all 0.3s ease; /* Smooth transition for hover */
+  margin-right: 20px; /* Right margin */
+}
+
+/* Hover effect for facts section */
+.facts:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  transform: translateY(-2px); /* Lift up slightly on hover */
+}
+
+/* Facts list item styling */
+.facts li {
+  margin-bottom: 15px; /* Space between items */
+  padding-left: 20px; /* Indent for bullet point */
+  position: relative; /* For absolute positioning of bullet */
+  line-height: 1.6; /* Increased line spacing */
+  font-size: 16px; /* Standard text size */
+}
+
+/* Custom star bullet point for facts */
+.facts li:before {
+  content: "✦"; /* Star symbol */
+  color: #8B3A3A; /* French red color */
+  font-weight: bold; /* Bold star */
+  position: absolute; /* Position at left */
+  left: 0; /* Align to left edge */
+}
+
+/* Facts section heading */
+.facts > h2 {
+  text-align: center; /* Center the title */
+  font-size: 24px; /* Heading size */
+  margin-bottom: 20px; /* Space below title */
+  border-bottom: 2px solid #8B3A3A; /* French red underline */
+  padding-bottom: 15px; /* Space for border */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Section heading container */
+.section-heading {
+  grid-area: section-heading; /* Assign to grid area */
+  position: relative; /* Allow positioning */
+  margin-bottom: 60px; /* Space below section */
+}
+
+/* Sidebar layout section heading */
+.grid-container .section-heading {
+  text-align: left; /* Left-align in sidebar layout */
+  padding: 20px; /* Inner padding */
+}
+
+/* Top menu layout section heading */
+.grid-container2 .section-heading {
+  text-align: center; /* Center-align in top menu layout */
+}
+
+/* Section heading title */
+.section-heading h1 {
+  margin-top: 0px; /* No top margin */
+  font-size: 32px; /* Large heading size */
+  color: #232323; /* Dark color */
+  display: inline-block; /* Inline display */
+  margin-right: 50px; /* Space to the right */
+}
+
+/* Section heading paragraph */
+.section-heading p {
+  display: inline-block; /* Inline display */
+  text-align: left; /* Left-align text */
+  font-size: 15px; /* Standard font size */
+  line-height: 26px; /* Increased line spacing */
+  color: #343434; /* Dark gray color */
+  top: 12.5px; /* Vertical alignment adjustment */
+  margin-left: 10%; /* Left margin */
+  margin-right: 10%; /* Right margin */
+}
+
+/* Text content container */
+.text-content {
+  padding-top: 20px; /* Space above */
+  background-color: #fff; /* White background */
+  position: relative; /* For z-index stacking */
+  z-index: 10; /* Stack above other elements */
+  padding-left: 20px; /* Left padding */
+  padding-right: 20px; /* Right padding */
+  padding-bottom: 20px; /* Bottom padding */
+}
+
+/* Text content heading */
+.text-content h2 {
+  margin-top: 20px; /* Space above heading */
+  margin-bottom: 15px; /* Space below heading */
+  font-size: 21px; /* Heading size */
+  font-weight: 600; /* Semi-bold */
+  color: #3D5A7F; /* French blue color */
+  letter-spacing: 0.5px; /* Slight letter spacing */
+  border-bottom: 2px solid #8B3A3A; /* French red underline */
+  padding-bottom: 10px; /* Space for underline */
+}
+
+/* Text content paragraph */
+.text-content p {
+  line-height: 1.8; /* Increased line spacing */
+  color: #333; /* Dark gray text */
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Horizontal rule styling */
+.text-content hr {
+  margin: 20px 0; /* Vertical spacing */
+  border: none; /* Remove default border */
+  border-top: 1px solid #e0e0e0; /* Light gray line */
+}
+
+/* Article container */
+article {
+  padding-top: 20px; /* Space above */
+  background-color: #fff; /* White background */
+  position: relative; /* For z-index stacking */
+  z-index: 10; /* Stack above other elements */
+  padding-left: 20px; /* Left padding */
+  padding-right: 20px; /* Right padding */
+  padding-bottom: 20px; /* Bottom padding */
+}
+
+/* Article heading */
+article h2 {
+  margin-top: 20px; /* Space above heading */
+  margin-bottom: 15px; /* Space below heading */
+  font-size: 21px; /* Heading size */
+  font-weight: 600; /* Semi-bold */
+  color: #3D5A7F; /* French blue color */
+  letter-spacing: 0.5px; /* Slight letter spacing */
+  border-bottom: 2px solid #8B3A3A; /* French red underline */
+  padding-bottom: 10px; /* Space for underline */
+}
+
+/* Article paragraph */
+article p {
+  line-height: 1.8; /* Increased line spacing */
+  color: #333; /* Dark gray text */
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Embedded iframe styling */
+iframe {
+  padding-top: 20px; /* Space above iframe */
+  background-color: #fff; /* White background */
+  position: relative; /* For z-index stacking */
+  z-index: 10; /* Stack above other elements */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 100%; /* Full width maximum */
+  height: auto; /* Auto height for responsiveness */
+  margin: 20px; /* Spacing around iframe */
+  display: block; /* Block display for margins */
+}
+
+/* Main footer styling */
+.footer {
+  grid-area: footer; /* Assign to footer grid area */
+  background-color: #3D5A7F; /* French blue background */
+  color: white; /* White text */
+  text-align: center; /* Center text */
+  padding: 30px; /* Inner padding */
+  margin-top: 60px; /* Space above footer */
+  font-size: 14px; /* Smaller text size */
+  line-height: 1.8; /* Increased line spacing */
+}
+
+/* Footer element reset */
+.footer footer {
+  margin: 0; /* Remove margins */
+}
+
+/* Footer links */
+.footer a {
+  color: #8B3A3A; /* French red color */
+  text-decoration: none; /* No underline */
+  font-weight: 600; /* Semi-bold */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Footer link hover effect */
+.footer a:hover {
+  color: white; /* Change to white on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Mobile responsive layout (max-width: 600px) */
+@media (max-width: 600px) {
+  /* Stack layout vertically for mobile */
+  .grid-container {
+    display: grid; /* CSS Grid layout */
+    grid-template-areas:
+      "header" /* Header full width */
+      "menu" /* Menu below header */
+      "section-heading" /* Content below menu */
+      "facts" /* Facts below content */
+      "footer"; /* Footer at bottom */
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  /* Stack layout for top menu pages on mobile */
+  .grid-container2 {
+    grid-template-areas:
+      "menu2" /* Full-width menu */
+      "header" /* Full-width header */
+      "section-heading" /* Full-width content */
+      "facts" /* Full-width facts */
+      "footer"; /* Full-width footer */
+  }
+
+  /* Make menus responsive on mobile */
+  .menu,
+  .menu2 {
+    position: relative; /* Position relative for mobile */
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+  }
+
+  /* Reduce header image height for mobile */
+  .header img {
+    height: 60vh; /* 60% of viewport */
+  }
+
+  /* Reduce header title on mobile */
+  .header > h1 {
+    font-size: 32px; /* Smaller heading */
+    top: 30%; /* Adjust position */
+    right: 10px; /* Closer to edge */
+  }
+
+  /* Reduce header subtitle on mobile */
+  .header > p {
+    font-size: 18px; /* Smaller subtitle */
+    top: 40%; /* Adjust position */
+    right: 5%; /* Adjust position */
+  }
+
+  /* Remove right margin and apply equal margins for facts */
+  .facts {
+    margin-right: 0; /* Remove right margin */
+    margin: 20px; /* Apply equal margins */
+  }
+
+  /* Stack menu items vertically on mobile */
+  .grid-container2 .menu2 ul,
+  .menu2 ul {
+    display: block; /* Stack vertically */
+  }
+
+  /* Stack menu items vertically on mobile */
+  .grid-container2 .menu2 li,
+  .menu2 li {
+    display: block; /* Stack vertically */
+  }
+}
+
+/* Tablet responsive layout (600px - 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  /* Adjusted sidebar layout for tablet */
+  .grid-container {
+    display: grid; /* CSS Grid layout */
+    grid-template-areas:
+      "menu header" /* Narrower sidebar */
+      "menu section-heading"
+      "menu facts"
+      "footer footer"; /* Full-width footer */
+    grid-template-columns: 180px auto; /* Narrower sidebar (180px) */
+  }
+
+  /* Stack layout for top menu pages on tablet */
+  .grid-container2 {
+    grid-template-areas:
+      "menu2" /* Full-width menu */
+      "header" /* Full-width header */
+      "section-heading" /* Full-width content */
+      "facts" /* Full-width facts */
+      "footer"; /* Full-width footer */
+  }
+
+  /* Make menus responsive on tablet */
+  .menu,
+  .menu2 {
+    position: relative; /* Position relative for tablet */
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+  }
+
+  /* Adjust header image height for tablet */
+  .header img {
+    height: 80vh; /* 80% of viewport */
+  }
+}
+
+/* Small screens responsive layout (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Reduce header title for small screens */
+  .france-header h1 {
+    font-size: 32px; /* Smaller heading */
+  }
+
+  /* Reduce header subtitle for small screens */
+  .france-header p {
+    font-size: 16px; /* Smaller subtitle */
+  }
+
+  /* Reduce section title for small screens */
+  .section-title {
+    font-size: 24px; /* Smaller title */
+  }
+
+  /* Reduce padding in content cards for small screens */
+  .content-card {
+    padding: 20px; /* Reduced padding */
+  }
+
+  /* Reduce card heading for small screens */
+  .content-card h3 {
+    font-size: 20px; /* Smaller heading */
+  }
+
+  /* Adjust content wrapper margins for small screens */
+  .content-wrapper {
+    margin: 20px auto; /* Reduced margins */
+  }
+}
