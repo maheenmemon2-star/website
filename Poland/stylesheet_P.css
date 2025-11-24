@@ -1,0 +1,334 @@
+/* General body styling */
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(233, 84, 84));
+    letter-spacing: 1px;
+    font-family: "EB Garamond", serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+h1 {
+    background-color: rgba(207, 21, 37, 0.856);
+    letter-spacing: 5px; /* Source: W3Schools Purpose: Spaces characters out from each other */
+    color: white;
+
+    padding: 15px 50px;
+    border: 4px groove rgba(172, 4, 4, 0.393);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Source: W3Schools Purpose: Adds a shadowy effect to the outside of the border */
+}
+
+.slogan {
+    background-color: rgba(207, 21, 37, 0.856);
+    color: white;
+    
+    padding: 15px;
+    border: 4px groove rgba(172, 4, 4, 0.393);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.page-header {
+    background-color: transparent;
+    text-align: center;
+    box-shadow: none;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 0;
+}
+
+.header-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*for mobile screen sizes*/
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_responsive*/
+
+@media (max-width: 600px) {
+
+  .grid-containerE {
+    display: grid;
+    grid-template-areas:
+      "menu"
+      "headerE"
+      "content"
+      "other"
+      "footer";
+    gap: 10px;
+  }
+
+  /*https://www.w3schools.com/css/css_navbar_horizontal.asp*/
+  /*changes to a horizontal navbar instead of vertical when screen size is as a phone*/
+  .menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .menu ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .headerE img {
+    height: 60vh;
+  }
+
+  .headerE h1 {
+    font-size: 32px;
+    top: 30%;
+    /* smaller but still bold + readable */
+    right: 10px;
+    /* move it closer to the edge */
+  }
+
+  .headerE p {
+    font-size: 18px;
+    top: 50%;
+    right: 5%;
+  }
+
+  iframe {
+    width: 80%;
+    height: 250px;
+  }
+
+}
+
+/*For tablet screen sizes*/
+@media (min-width: 600px) and (max-width: 900px) {
+
+  .grid-containerE {
+    display: grid;
+    grid-template-areas:
+      "menu headerE"
+      "menu content"
+      "menu other"
+      "footer footer";
+    grid-template-columns: 180px auto;
+  }
+
+  .menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+
+  iframe {
+    width: 100%;
+  }
+}
+
+/*For Laptop screen sizes*/
+@media (min-width: 900px) {
+
+  .grid-containerE {
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-areas:
+      "menu headerE"
+      "menu content"
+      "menu other"
+      "footer footer";
+    min-height: 100vh; /* Make grid fill viewport */
+    height: 100vh;     /* Ensure full height */
+  }
+
+  .menu {
+    width: 250px;
+    position: relative;
+    height: 100vh;     /* Make nav fill the column */
+    min-height: 100vh;
+  }
+
+  .headerE {
+    grid-area: headerE;
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  iframe {
+    width: 600px;
+  }
+
+}
+
+
+/* navbar */
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_gray*/
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar*/
+
+/* navbar */
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_gray*/
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar*/
+.menu {
+  grid-area: menu;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.9);
+  z-index: 50;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin-left: 0;
+  list-style: none;
+  padding: 0;
+  overflow: visible;
+}
+
+.menu li {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 5px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.menu a:hover,
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #222222ad;
+  min-width: 105px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu li a:hover {
+  background-color: #000000d7;
+}
+
+iframe {
+  grid-area: section-heading;
+  padding-top: 20px;
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #ec0a0a;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    border-bottom: 4px groove rgb(199, 3, 3);
+    border-top: 4px groove rgb(199, 3, 3);
+}
+
+/* Bootstrap */
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+@media (min-width: 40em) {
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+/* Remove unwanted white space at the top and prevent horizontal scroll */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* Remove Bootstrap example body padding that causes top/bottom white space */
+body {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: #5a5a5a;
+}
